@@ -1,13 +1,226 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Quicksand";
+  color: #333;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+header{
+    height: 10vh;
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:3vw;
+    padding-right: 3vw;
+}
+
+.product-list-conteiner{
+  border:2px solid yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+
+.products-conteiner{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:3vh;
+    justify-content: space-around;
+
+}
+.filter-products{
+  height:10vh;
+  border: 1px solid pink;
+  margin:2vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filter-products button{
+  padding: 0.4vw;
+  margin-right: 0.5vw;
+}
+
+.drop-down-conteiner{
+  padding: 0.4vw;
+}
+.product-conteiner{
+    width: 22vw;
+    height: auto;
+    border: 2px solid red;
+    /* overflow: hidden; */
+    margin-bottom: 4vh;
+}
+div.image{
+    width: 90%;
+    height: 65%;
+    border:1px solid blue;
+    margin:1vh auto;
+}
+
+div.image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.content{
+    border:1px solid green;
+    width: 90%;
+    margin:1vh auto;
+    text-align: center;
+    height: 15%;
+    max-height: 15%;
+
+}
+
+.link-title{
+text-decoration: none;
+color: inherit;
+font-size:2.4vh;
+font-weight: bold;
+
+}
+
+.link-title .title:hover{
+  color: #f1356d;
+}
+.title{
+  margin-bottom: 1vh;
+}
+
+button.add-to-card-product{
+    width: 8vw;
+    height: 6vh;
+    background-color: #f1356d;
+    font-size:2.5vh;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border: none;
+    cursor:pointer;
+    border-radius: 8px;
+    margin: 1vh auto;
+}
+
+button.add-to-card-product:hover{
+    background-color:#f35383
+}
+
+.product-detail-main-conteiner{
+    width: 100vw;
+    height: 90vh;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-detail-conteiner{
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border:1px solid rgba(42, 42, 42,0.3);
+    border-radius: 4px;
+   
+}
+
+.image-conteiner{
+    width: 48%;
+    height: 90%;
+    border: 1px solid white;
+    border-right: 1px solid gray;
+}
+
+.content-conteiner{
+    width: 48%;
+    height: 90%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    padding:2vh;
+}
+
+.product-detail-image{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.content-title{
+    font-size: 4vh;
+    margin-bottom: 3vh;
+    font-weight: 700;
+}
+
+.content-price{
+    font-size:3vh;
+    font-weight: 900;
+    margin-bottom:3vh
+}
+
+.content-category{
+    /* border: 1px solid gray; */
+    background-color: rgb(207, 203, 203);
+    padding: 2vh;
+    font-weight: 700;
+    font-size:3vh;
+    margin-bottom:4vh;
+
+}
+.content-description{
+    margin-bottom:3vh;
+    line-height: 3vh;
+}
+
+button.add-to-card{
+    width: 10vw;
+    height: 8vh;
+    background-color: #f1356d;
+    font-size:2.5vh;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border: none;
+    cursor:pointer;
+    border-radius: 8px;
+}
+
+button.add-to-card:hover{
+    background-color:#f35383
+}
+
+.cart-item-conteiner{
+  display: flex;
+  margin-bottom:3vh;
+  margin-top:5vh;
+  align-items: center;
+}
+
+.cart-image{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid black;
+  
+}
+
+.cart-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
