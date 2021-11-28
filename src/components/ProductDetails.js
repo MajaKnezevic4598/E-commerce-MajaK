@@ -8,11 +8,24 @@ import {
 } from "../redux/product/productListActions";
 import { addToCard } from "../redux/shopping/shoppingActions";
 import axios from "axios";
+import StarIcon from "@mui/icons-material/Star";
+import {makeStyles} from "@material-ui/core"
+import {pink} from "@mui/material/colors"
 
+
+
+const useStyles = makeStyles({
+  star: {
+      fontSize:"4vh",
+    marginRight:"1vw"
+  }
+});
 
 
 Modal.setAppElement("#root");
 const ProductDetails = () => {
+
+  const classes = useStyles()
 
    const cartState = useSelector((state) => state.shop.cart);
     const product = useSelector((state) => state.product);
@@ -44,8 +57,8 @@ const ProductDetails = () => {
      const { image, title, id, description, price, category,rating } = product;
     
      const inCart = cartState.some(item=>item.id === id);
-     console.log(inCart)
- 
+     
+      console.log(title)
 const fetchProductDetails = async () => {
   const response = await axios
     .get(`https://fakestoreapi.com/products/${productId}`)
@@ -81,7 +94,11 @@ useEffect(() => {
               <div className="content-price">$ {price}</div>
               <div className="content-category">{category}</div>
               <div className="content-description">{description}</div>
-              <div className="content-rating">{rating.rate}</div>
+              <div className="content-rating">
+                <StarIcon className={classes.star} />{" "}
+              
+                {rating.rate}
+              </div>
               {inCart && (
                 <div className="already-in-cart">Product added to cart</div>
               )}
@@ -90,11 +107,36 @@ useEffect(() => {
                   Add to card
                 </button>
               )}
-              <Modal isOpen={modalIsOpen}>
-                <div>Modal Title</div>
-                <div>Modal Body</div>
-                <button onClick={()=>{setModalIsOpen()}}>Close</button>
-               <Link to="/cart">  <button>Go to checkout</button> </Link>
+              <Modal
+                isOpen={modalIsOpen}
+                style={{
+                  overlay: { backgroundColor: "rgba(0, 0, 0, 0.75)" },
+                  content: {
+                    top: "35vh",
+                    left: "30vw",
+                    right: "30vw",
+                    bottom: "35vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    zIndex:2
+                  },
+                }}
+              >
+                <div className="modal-title">{title} added to cart</div>
+                <div className="modal-buttons">
+                  <button
+                    className="close-modal"
+                    onClick={() => {
+                      setModalIsOpen(false);
+                    }}
+                  >
+                    Close
+                  </button>
+                  <Link to="/cart" className="go-to-checkout">
+                    <button>Go to checkout</button>
+                  </Link>
+                </div>
               </Modal>
             </div>
           </div>

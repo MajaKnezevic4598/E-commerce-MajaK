@@ -88,7 +88,7 @@ const ProductsList = () => {
           <div className="drop-down-conteiner">
             
             <select value={selectValue} onChange={(e)=>setSelectValue(e.target.value)}>
-             <option value="">Choose here</option>
+             <option value="">Apply filter</option>
               <option value="price-asc">Sort by price lower-to-higer</option>
               <option value="price-desc">Sort by price higer-to-higer</option>
               <option value="name-a-z">Sort by name A - Z</option>

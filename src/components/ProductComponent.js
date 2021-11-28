@@ -28,7 +28,7 @@ const ProductComponent = () => {
   const productList = products.map((product) => {
     let { id, title, image, price, category } = product;
     let newTitle = title.split(" ");
-    const slicedTitle = newTitle.slice(0, 6);
+    const slicedTitle = newTitle.slice(0, 4);
     title = slicedTitle.join(" ");
 
     return (

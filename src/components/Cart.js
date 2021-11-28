@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/shopping/shoppingActions";
 import { setQtyPlus, setQtyMinus } from "../redux/shopping/shoppingActions";
 
+
 const Cart = () => {
     const stateFromShop = useSelector(state=>state.shop.cart)
     console.log(stateFromShop)
@@ -48,12 +49,14 @@ const Cart = () => {
                <div className="cart-title">{title}</div>
                <div className="cart-price">$ {price}</div>
                <div className="cart-quantity">
-                 <button disabled={qty > 0 ? "" : "disabled"} onClick={() => {dispatch(setQtyMinus(id, 1));}}>-</button>
-                 <div className="add-to-qyuantity" onClick={()=>{dispatch(setQtyPlus(id,1))}}>+</div>
-                 <div>Quantity {qty}</div>
+                 <button className="remove-from-quantity"disabled={qty > 0 ? "" : "disabled"} onClick={() => {dispatch(setQtyMinus(id, 1));}}>-</button>
+                
+                 <div> {qty}</div>
+                 <div className="add-to-quantity" onClick={()=>{dispatch(setQtyPlus(id,1))}}>+</div>
+                
                </div>
                <div className="total"> Total for item: {qty * price} $</div>
-               <div>
+               <div className="remove">
                     <button className="remove-item" onClick={() => {dispatch(removeFromCart(id));}}>
                  Remove item
                </button>
@@ -69,14 +72,14 @@ const Cart = () => {
     return (
       <div className="cart-conteiner">
         {Object.keys(stateFromShop).length === 0 ? (
-          <div>No items in the cart</div>
+          <div className="no-items-in-cart">No items in the cart</div>
         ) : (
           <div>
             <div>{shopList}</div>
             <div>
               <div className="total-price-conteiner">
-                <div className="total-price">Total Price {totalPrice}</div>
-                <div>Total Items : {totalItems} </div>
+                <div className="total-price">Total Price: {totalPrice} $</div>
+                <div className="total-items">Total Items : {totalItems} </div>
               </div>
             </div>
           </div>
