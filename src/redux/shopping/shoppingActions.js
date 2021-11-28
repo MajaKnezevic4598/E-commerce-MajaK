@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, SET_QTY,LOAD_CURRENT_ITEM} from "./shoppingTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART, SET_QTY_PLUS,LOAD_CURRENT_ITEM,SET_QTY_MINUS} from "./shoppingTypes";
 
 export const addToCard = (itemId,product) =>{
     return{
@@ -19,9 +19,9 @@ export const removeFromCart = (itemId) => {
   };
 };
 
-export const setQty = (itemId, value)=>{
+export const setQtyPlus = (itemId, value)=>{
     return {
-        type:SET_QTY,
+        type: SET_QTY_PLUS,
         payload:{
             id:itemId,
             qty:value
@@ -29,6 +29,16 @@ export const setQty = (itemId, value)=>{
     }
 
 }
+
+export const setQtyMinus = (itemId, value) => {
+  return {
+    type: SET_QTY_MINUS,
+    payload: {
+      id: itemId,
+      qty: value,
+    },
+  };
+};
 
 export const loadCurrentItem = (item) =>{
     return {

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 * {
   margin: 0;
@@ -17,6 +19,10 @@ header{
     justify-content: space-between;
     padding-left:3vw;
     padding-right: 3vw;
+}
+
+.logo{
+    font-family:'Satisfy', cursive;
 }
 
 .product-list-conteiner{
@@ -204,18 +210,23 @@ button.add-to-card:hover{
 }
 
 .cart-item-conteiner{
-  display: flex;
-  margin-bottom:3vh;
+  /* display: flex;
+  flex-wrap: wrap;
+ 
   margin-top:5vh;
   align-items: center;
+  justify-content: space-around; */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border:1px solid teal;
+   margin-bottom:3vh;
 }
 
 .cart-image{
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
+  width: 8vw;
+  height: 8vw;
   border: 1px solid black;
+ 
   
 }
 
@@ -223,4 +234,33 @@ button.add-to-card:hover{
     width:100%;
     height:100%;
     object-fit:contain;
+}
+
+.cart-quantity{
+    display: flex;
+    align-items: center;
+}
+.add-to-qyuantity{
+    margin-right: 2vw;
+    font-size: 4vh;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.remove-from-quantity{
+    margin-left: 2vw;
+    font-size: 4vh;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.remove-item{
+    padding:1vh;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+}
+
+.total-price-conteiner {
+    width: 100%;
 }

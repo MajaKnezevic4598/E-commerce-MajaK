@@ -4,7 +4,6 @@ import axios from "axios";
 import { fetchProducts } from "../redux/products/productsListActions";
 import ProductComponent from "./ProductComponent";
 import { filterProducts } from "../redux/products/productsListActions";
-import { sortNameAsc } from "../redux/products/productsListActions";
 import { sort } from "../redux/products/productsListActions";
 
 
@@ -40,6 +39,7 @@ const ProductsList = () => {
     },[selectValue])
 
     console.log(products)
+  
     return (
       <div className="product-list-conteiner">
         <div className="filter-products">
