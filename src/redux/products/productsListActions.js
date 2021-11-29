@@ -7,7 +7,7 @@ export const fetchProducts = () => {
   return (dispatch) => {
     dispatch(fetchProductsRequest());
     axios
-      .get("http://fakestoreapi.com/products",
+      .get("https://fakestoreapi.com/products",
        {
            mode:'cors',
         header: {
@@ -75,7 +75,7 @@ export const filterProducts = (category) => {
   return (dispatch) => {
     dispatch(filterProductsRequest());
     axios
-      .get(`http://fakestoreapi.com/products/category/${category}`, {
+      .get(`https://fakestoreapi.com/products/category/${category}`, {
           mode:'cors',
         header: {
           "Access-Control-Allow-Origin": "*",
