@@ -46,7 +46,7 @@ const ProductDetails = () => {
       console.log(title)
 const fetchProductDetails = async () => {
   const response = await axios
-    .get(`https://fakestoreapi.com/products/${productId}`)
+    .get(`http://fakestoreapi.com/products/${productId}`)
     .catch((err) => {
       console.log(err);
     });
