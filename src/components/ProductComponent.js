@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect,useState} from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCard } from "../redux/shopping/shoppingActions";
@@ -10,20 +10,33 @@ const ProductComponent = () => {
   const dispatch = useDispatch();
   const cartState = useSelector((state) => state.shop.cart);
 
+  // let storageL = localStorage.getItem("localShop") ? (localStorage.getItem("localShop")) : ([])
+  // let numL = localStorage.getItem("cartItems") ? (localStorage.getItem("cartItem")): (0)
+  // const [local,setLocal]=useState(storageL);
+  // const [num,setNum] = useState(numL)
 
-//  const fromLocal = localStorage.getItem("cartItems");
-//  console.log(fromLocal);
-//  console.log("*******************************************")
-  
+ 
+  // useEffect(()=>{
+  //   localStorage.setItem("localShop",local);
+  //   const a=localStorage.getItem("localShop");
+  //   setLocal(a)
+  //   const b = localStorage.getItem("cartItems");
+  //   setNum(b)
+  // })
 
   // useEffect(() => {
   //   // console.log(cartState);
   //   // console.log("ovo je state iz useEffecta kada dodamo u local storage");
   //   localStorage.setItem("localShop", JSON.stringify(cartState));
   //   localStorage.setItem("cartItems", Object.keys(cartState).length);
-  //   console.log(localStorage.getItem("cartItems"));
-  //   console.log("iz product komponente cartItems")
+  //   const a = localStorage.getItem("localShop");
+  //   setLocal(a);
+  //   const b = localStorage.getItem("cartItems");
+  //   setNum(b);
+   
   // }, [cartState]);
+
+  
 
   const productList = products.map((product) => {
     let { id, title, image, price, category } = product;
@@ -54,7 +67,7 @@ const ProductComponent = () => {
           Add Item
         </button>
 
-      
+      {/* <div>{num} iz local stata</div> */}
         
       </div>
     );

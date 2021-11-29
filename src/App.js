@@ -9,6 +9,7 @@ import Cart from './components/Cart';
 import store from './redux/store';
 
 function App() {
+
   return (
     <Provider store={store}>
       <Router>

@@ -9,10 +9,14 @@ import { sort } from "../redux/products/productsListActions";
 
 const ProductsList = () => {
 
+ const cartState = useSelector((state) => state.shop.cart);
+
+
     const isMounted = useRef(false)
     const [category,setCategory] = useState(" ")
     const products = useSelector(state=>state)
     const dispatch = useDispatch()
+    const isLoading = useSelector(state=>state.allProducts.loading);
    
      const [selectValue, setSelectValue] = useState("");
 
@@ -42,6 +46,7 @@ const ProductsList = () => {
   
     return (
       <div className="product-list-conteiner">
+        {isLoading ? <div>...Loading</div> : <div></div>}
         <div className="filter-products">
           <button
             id="men's clothing"
@@ -86,15 +91,21 @@ const ProductsList = () => {
           <div>{category}</div>
 
           <div className="drop-down-conteiner">
-            
-            <select value={selectValue} onChange={(e)=>setSelectValue(e.target.value)}>
-             <option value="">Apply filter</option>
+            <select
+              value={selectValue}
+              onChange={(e) => setSelectValue(e.target.value)}
+            >
+              <option value="">Apply filter</option>
               <option value="price-asc">Sort by price lower-to-higer</option>
               <option value="price-desc">Sort by price higer-to-higer</option>
               <option value="name-a-z">Sort by name A - Z</option>
               <option value="name-z-a">Sort by name Z - A</option>
-              <option value="rating-asc">Sort by rating lower - to - higer</option>
-              <option value="rating-desc">Sort by rating higer - to - lower</option>
+              <option value="rating-asc">
+                Sort by rating lower - to - higer
+              </option>
+              <option value="rating-desc">
+                Sort by rating higer - to - lower
+              </option>
             </select>
             <div>{selectValue}</div>
           </div>

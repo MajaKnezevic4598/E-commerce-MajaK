@@ -32,23 +32,8 @@ const ProductDetails = () => {
     
     const [modalIsOpen,setModalIsOpen] = useState(false)
 
-   
-    const [local,setLocal] = useState(localStorage.getItem("cartItems"))
-    
-
   
-    useEffect(()=>{
-     
-     setLocal(localStorage.getItem("cartItems"))
-    },[])
-    useEffect(()=>{
-       localStorage.setItem("localShop", JSON.stringify(cartState));
-       setLocal(localStorage.getItem("cartItems"));
-      
-    },[cartState])
-
-    
-   
+ 
       
    
 

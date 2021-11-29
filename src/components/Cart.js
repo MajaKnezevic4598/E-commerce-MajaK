@@ -6,10 +6,11 @@ import { setQtyPlus, setQtyMinus } from "../redux/shopping/shoppingActions";
 
 
 const Cart = () => {
-    const stateFromShop = useSelector(state=>state.shop.cart)
-    console.log(stateFromShop)
-    console.log('state iz shopa');
-    const dispatch=useDispatch();
+
+ 
+ const stateFromShop = useSelector((state) => state.shop.cart);
+ const dispatch = useDispatch();
+  
 
     const [totalPrice,setTotalPrice] = useState(0)
     const [totalItems,setTotalItems] = useState(0)

@@ -11,7 +11,6 @@
 
 header{
     height: 10vh;
-    border: 1px solid black;
     width: 100%;
     display: flex;
     align-items: center;
@@ -39,7 +38,6 @@ header{
 }
 
 .product-list-conteiner{
-  border:2px solid yellow;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,12 +54,12 @@ header{
 }
 .filter-products{
   height:10vh;
-  border: 1px solid pink;
   margin:2vh 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .filter-products button{
   padding: 0.6vw;
   margin-right: 0.5vw;
@@ -77,17 +75,15 @@ header{
 .product-conteiner{
     width: 22vw;
     height: 63vh;
-    border: 2px solid red;
-    /* overflow: hidden; */
     margin-bottom: 2vh;
 }
+
 .product-conteiner:hover{
-    box-shadow: 15px 15px 5px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 7px 7px rgba(0, 0, 0,0.2);
 }
 div.image{
     width: 90%;
     height: 65%;
-    border:1px solid blue;
     margin:1vh auto;
 }
 
@@ -98,7 +94,6 @@ div.image img{
 }
 
 .content{
-    border:1px solid green;
     width: 90%;
     margin:1vh auto;
     text-align: center;
@@ -145,7 +140,6 @@ button.add-to-card-product:hover{
 .product-detail-main-conteiner{
     width: 100vw;
     height: 90vh;
-  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -165,14 +159,13 @@ button.add-to-card-product:hover{
 .image-conteiner{
     width: 48%;
     height: 90%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     border-right: 1px solid gray;
 }
 
 .content-conteiner{
     width: 48%;
     height: 90%;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
 }
@@ -222,7 +215,6 @@ button.add-to-card-product:hover{
     font-size:2.2vh;
     font-weight: bold;
     margin-bottom: 4vh;
-    border:1px solid blue;
     display: flex;
     align-items: center;
     
@@ -282,29 +274,20 @@ button.add-to-card:hover{
     margin-top:4vh;
 }
 .cart-item-conteiner{
-  /* display: flex;
-  flex-wrap: wrap;
- 
-  margin-top:5vh;
-  align-items: center;
-  justify-content: space-around; */
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  border:1px solid teal;
    margin-bottom:3vh;
 }
 
 .cart-image{
   width: 8vw;
   height: 8vw;
-  border: 1px solid black;
 }
 
 .cart-title,.cart-price,.total,.remove{
     display: flex;
     align-items: center;
     justify-content: center;
-    border:1px solid pink;
 }
 
 .cart-title{
@@ -330,14 +313,12 @@ button.add-to-card:hover{
 
 
 .add-to-quantity{
-   
     font-size: 4vh;
     font-weight: 900;
     cursor: pointer;
 }
 
 .remove-from-quantity{
-    
     font-size: 4vh;
     font-weight: 900;
     border:none;
@@ -347,7 +328,6 @@ button.add-to-card:hover{
 
 .remove-item{
     padding:1vh;
-   
     border: none;
      border-radius: 3px;
     cursor: pointer;
@@ -360,13 +340,10 @@ button.add-to-card:hover{
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    border: 1px solid red;
 }
 
 .total-price,.total-items{
     width: 20vw;
-    border:1px solid grey;
-   
     text-align: start;
     padding: 1vh;
     font-size: 2.8vh;
@@ -394,13 +371,14 @@ button.add-to-card:hover{
 
     .product-conteiner{
         height: 60vh;
+       
     }
     button.add-to-card-product{
         font-size:1.8vh;
     }
     .total-price, .total-items {
     width: 20vw;
-    border: 1px solid grey;
+   
     text-align: start;
     padding: 1vh;
     font-size: 2.2vh;
@@ -411,6 +389,7 @@ button.add-to-card:hover{
 @media  screen and (max-width:768px) {
     .product-conteiner{
         width: 40vw;
+        
     }
 
     button.add-to-card-product{
@@ -474,7 +453,8 @@ button.add-to-card:hover{
     }
     .cart-item-conteiner{
        grid-template-columns: 1fr;
-    }
+       border-bottom: 1px solid rgba(0,0,0,0.4);
+    } 
     .cart-image{
         width: 20vw;
         height: 20vw;
@@ -494,6 +474,7 @@ button.add-to-card:hover{
     }
     .remove-item{
         font-weight: bold;
+        margin-bottom: 4vh;
     }
     .total-price,.total-items{
         width:50vw
